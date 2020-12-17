@@ -9,9 +9,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Source Technologies`,
-    description: `Gatsby powered site for Source Technologies`,
-    author: `Dilate Digital - Jejomar Dorongon`,
+    title: `Gatsby WordPress Tailwind Starter`,
+    description: `A starter using Gatsby, WordPress, and Tailwind`,
+    author: `Jejomar Dorongon`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
