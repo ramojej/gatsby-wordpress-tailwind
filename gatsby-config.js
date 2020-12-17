@@ -1,8 +1,17 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
+// require .env.development or .env.production
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Source Technologies`,
+    description: `Gatsby powered site for Source Technologies`,
+    author: `Dilate Digital - Jejomar Dorongon`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,6 +24,16 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        /*
+         * The full URL of the WordPress site's GraphQL API.
+         * Example : 'https://www.example-site.com/graphql'
+         */
+        url: process.env.WPGRAPHQL_URL,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
